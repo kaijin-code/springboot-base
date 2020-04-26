@@ -12,7 +12,7 @@ import java.lang.reflect.Method;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.*;
 
 public class CommonUtils {
 
@@ -44,9 +44,5 @@ public class CommonUtils {
 
     public static void main(String[] args) throws InterruptedException {
 
-        //Snowflake snowflake = IdUtil.createSnowflake(1, 1);
-        /*System.out.println(IdUtils.generateSimleUUid());
-        System.out.println(IdUtils.generateObjectId());
-        System.out.println(IdUtils.generateSnowflake(1,1));*/
     }
 }
