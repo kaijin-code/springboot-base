@@ -1,48 +1,84 @@
 package com.xncoding.util;
 
-import cn.hutool.core.convert.Convert;
-import cn.hutool.core.date.DateUtil;
-import cn.hutool.core.date.TimeInterval;
-import cn.hutool.core.lang.Snowflake;
-import cn.hutool.core.util.*;
-import cn.hutool.system.SystemUtil;
-import com.xncoding.common.LanguageCode;
-
-import java.lang.reflect.Method;
-import java.util.Calendar;
-import java.util.Date;
-import java.util.List;
-import java.util.concurrent.*;
+import java.util.ArrayList;
+import java.util.Stack;
 
 public class CommonUtils {
 
-    public static String getTime() {
-        //当前时间
-        Date date = DateUtil.date();
-        System.out.println(date);
+    public static String replaceSpace(String str){
 
-//当前时间字符串，格式：yyyy-MM-dd HH:mm:ss
-        String now = DateUtil.now();
-        System.out.println(now);
-        return now;
+        if(str==null){
+            return null;
+        }
+        StringBuilder sb = new StringBuilder();
+        int len = str.length();
+        for (int i = 0; i < len; i++){
+            if(" ".equals(String.valueOf(str.charAt(i)))){
+                sb.append("%10");
+            }else{
+                sb.append(str.charAt(i));
+            }
+        }
+        return String.valueOf(sb);
     }
 
-    public int a(int b){
-        return b;
+    //创建一个链表的类
+    private static class ListNode{
+        int val;	//数值 data
+        ListNode next;	// 结点 node
+
+        ListNode(int x){	//可以定义一个有参构造方法，也可以定义一个无参构造方法
+            val = x;
+        }
+        // 添加新的结点
+        public void add(int newval) {
+            ListNode newNode = new ListNode(newval);
+            if(this.next == null)
+                this.next = newNode;
+            else
+                this.next.add(newval);
+        }
+        // 打印链表
+        public void print() {
+            System.out.print(this.val);
+            if(this.next != null)
+            {
+                System.out.print("-->");
+                this.next.print();
+            }
+        }
     }
 
-    public static String convert(){
-        int a = 1;
-        String aStr = Convert.toStr(a);
-        System.out.println(aStr);
 
-        Object[] obj = {"a", "你", "好", "", 1};
-        List<?> list = Convert.toList(obj);
-        System.out.println(list);
-        return "";
+    public static ArrayList<Integer> printListFromTailtoHead(ListNode listNode){
+        ArrayList<Integer> list = new ArrayList<>();
+        if(list == null){
+            return list;
+        }
+        Stack<ListNode> stack = new Stack<>();
+        while(listNode != null){
+            stack.push(listNode);
+            listNode = listNode.next;
+        }
+
+        while(!stack.isEmpty()){
+            //stack.pop();
+
+            list.add(stack.pop().val);
+        }
+
+        return list;
     }
+
 
     public static void main(String[] args) throws InterruptedException {
 
+       char c = ' ';
+       System.out.println(replaceSpace("we are happy").replaceAll("%10", ""));
+        ListNode node = new ListNode(2);
+        node.add(3);
+        node.add(4);
+        node.print();
+        System.out.println(printListFromTailtoHead(node));
     }
 }
