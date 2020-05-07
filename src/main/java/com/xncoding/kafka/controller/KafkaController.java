@@ -5,6 +5,7 @@ import com.xncoding.redis.RedisUtil;
 import com.xncoding.util.IdUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,6 +15,16 @@ public class KafkaController {
 
     @Autowired
     Ksend ksend;
+
+    @GetMapping("/setnx/{key}/{val}")
+   public boolean setnx(@PathVariable String key, @PathVariable String val) {
+        return RedisUtil.setnx(key, val);
+    }
+
+    @GetMapping("/delnx/{key}/{val}")
+    public int delnx(@PathVariable String key, @PathVariable String val) {
+        return RedisUtil.delnx(key, val);
+    }
 
     @GetMapping("/send")
     public String send(HttpServletRequest request){

@@ -1,7 +1,10 @@
 package com.xncoding.util;
 
+
 import java.util.ArrayList;
 import java.util.Stack;
+import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class CommonUtils {
 
@@ -70,15 +73,35 @@ public class CommonUtils {
         return list;
     }
 
-
+    public static volatile int num = 0;
+    static AtomicInteger a = new AtomicInteger(0);
+    //使用CountDownLatch来等待计算线程执行完
+    static CountDownLatch countDownLatch = new CountDownLatch(30);
     public static void main(String[] args) throws InterruptedException {
 
-       char c = ' ';
+       /*char c = ' ';
        System.out.println(replaceSpace("we are happy").replaceAll("%10", ""));
         ListNode node = new ListNode(2);
         node.add(3);
         node.add(4);
         node.print();
-        System.out.println(printListFromTailtoHead(node));
-    }
+        System.out.println(printListFromTailtoHead(node));*/
+            //开启30个线程进行累加操作
+           /* for(int i=0;i<30;i++){
+
+                new Thread(() -> {
+                    for(int j=0;j<10000;j++){
+                        a.incrementAndGet();//自加操作
+                        num++;
+                    }
+                    countDownLatch.countDown();
+                }).start();
+            }
+            //等待计算线程执行完
+            countDownLatch.await();
+            System.out.println(a.get());
+            System.out.println(num);*/
+        System.out.println( System.nanoTime());
+
+        }
 }

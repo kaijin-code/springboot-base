@@ -25,7 +25,6 @@ public class ApplicationContextUtils implements ApplicationContextAware {
 	@Override
 	public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
 		context = applicationContext;
-
 	}
 
 	public static String getProperties(String key) {

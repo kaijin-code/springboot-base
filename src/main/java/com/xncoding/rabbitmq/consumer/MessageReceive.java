@@ -1,18 +1,24 @@
 package com.xncoding.rabbitmq.consumer;
 
 import com.rabbitmq.client.Channel;
+import com.xncoding.common.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.io.IOException;
+import java.util.Random;
 
 @Component
 public class MessageReceive {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(MessageReceive.class);
+
+    @Autowired
+    UserService userService;
 
     @RabbitListener(queues = "Hello")
     public void process(Message message, Channel channel) throws IOException {
@@ -32,6 +38,7 @@ public class MessageReceive {
 
     @RabbitListener(queues = "fanout.A")
     public void processA(String message) {
+        userService.insert(message, 22);
         System.out.println("fanout Receiver A:  : " + message);
     }
 
