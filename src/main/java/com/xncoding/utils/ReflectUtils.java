@@ -1,4 +1,4 @@
-package com.xncoding.util;
+package com.xncoding.utils;
 
 
 import cn.hutool.core.util.ReflectUtil;

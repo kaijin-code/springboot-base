@@ -1,6 +1,6 @@
 package com.xncoding.rabbitmq.producer;
 
-import com.xncoding.util.DateUtils;
+import com.xncoding.utils.DateUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.amqp.core.AmqpTemplate;

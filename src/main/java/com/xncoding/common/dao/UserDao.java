@@ -19,4 +19,10 @@ public interface UserDao {
 
     @Insert("INSERT INTO user(name, age, time) VALUES (#{name}, #{age}, #{time})")
     void insert(User user);
+
+    @Update("update user set name = #{name},age = #{age} where id = #{id}")
+    public int update(User user);
+
+    @Delete("delete from user where id = #{id}")
+    int deleteById(int id);
 }

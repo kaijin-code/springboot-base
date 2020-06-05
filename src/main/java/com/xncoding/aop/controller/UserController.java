@@ -40,6 +40,9 @@ public class UserController {
 
     @GetMapping("/insert")
     public String insert(String name, int age) {
+
+
         return userService.insert(name, age);
     }
+
 }

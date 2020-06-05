@@ -1,4 +1,4 @@
-package com.xncoding.util;
+package com.xncoding.utils;
 
 
 import java.util.ArrayList;
@@ -79,6 +79,9 @@ public class CommonUtils {
     static CountDownLatch countDownLatch = new CountDownLatch(30);
     public static void main(String[] args) throws InterruptedException {
 
+        long lo = 12;
+
+        System.out.println(lo/1);
        /*char c = ' ';
        System.out.println(replaceSpace("we are happy").replaceAll("%10", ""));
         ListNode node = new ListNode(2);
@@ -101,7 +104,7 @@ public class CommonUtils {
             countDownLatch.await();
             System.out.println(a.get());
             System.out.println(num);*/
-        System.out.println( System.nanoTime());
+        System.out.println( IdUtils.generateObjectId());
 
         }
 }

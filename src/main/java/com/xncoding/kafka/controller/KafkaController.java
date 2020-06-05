@@ -2,7 +2,7 @@ package com.xncoding.kafka.controller;
 
 import com.xncoding.kafka.producer.Ksend;
 import com.xncoding.redis.RedisUtil;
-import com.xncoding.util.IdUtils;
+import com.xncoding.utils.IdUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;

@@ -53,7 +53,7 @@ public class LogAspect {
 
     //环绕通知,环绕增强，相当于MethodInterceptor
     @Around("webLog()")
-    public Object arround(ProceedingJoinPoint pjp) throws Throwable{
+    public Object around(ProceedingJoinPoint pjp) throws Throwable{
         System.out.println("方法环绕start.....");
         try {
             Object o =  pjp.proceed();
