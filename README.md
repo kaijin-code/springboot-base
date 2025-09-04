@@ -10,5 +10,15 @@
  * kafka   kafka消息队列  
  * rabbitmq  rabbitmq消息队列  
  * redis   使用jedis连接，分布式锁实现用户抢单，使用LinkedHashMap实现LRU算法  
- * utils   使用hutool工具类，实现日期转换、分布式id生成、反射调用  
-  
+ * utils   使用hutool工具类，实现日期转换、分布式id生成、反射调用
+
+
+   
+  https://www.dmxapi.cn/
+ANTHROPIC_AUTH_TOKEN
+ANTHROPIC_BASE_URL=https://www.dmxapi.cn
+
+
+30day：xxxx-svcacct-y2n8TrXNtkpRbYSamWOpjlMr1Z4Uw90ndWrdfTSeEk_xre4QZ4sRsROhdolvfyHT7hdjJDkEyWT3BlbkFJUB7KLM3WsDa2dnMVjsLBnNsm619gZ0nAjD4hs-9t8NM5Hyos8NIfHJY0O4PkYEGPQ9y-Ls8XAA
+
+jupyter-plugin
