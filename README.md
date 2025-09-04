@@ -14,9 +14,9 @@
 
 
    
-  https://www.dmxapi.cn/
-ANTHROPIC_AUTH_TOKEN
-ANTHROPIC_BASE_URL=https://www.dmxapi.cn
+  * https://www.dmxapi.cn/                                                    
+* ANTHROPIC_AUTH_TOKEN
+* ANTHROPIC_BASE_URL=https://www.dmxapi.cn
 
 
 30day：xxxx-svcacct-y2n8TrXNtkpRbYSamWOpjlMr1Z4Uw90ndWrdfTSeEk_xre4QZ4sRsROhdolvfyHT7hdjJDkEyWT3BlbkFJUB7KLM3WsDa2dnMVjsLBnNsm619gZ0nAjD4hs-9t8NM5Hyos8NIfHJY0O4PkYEGPQ9y-Ls8XAA
